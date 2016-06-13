@@ -13,7 +13,7 @@ router.post('/scrabble/score', Controller.score_word)
 
 router.get('/scrabble/score/:word', Controller.value)
 
-module.exports = router;
+module.exports = router
 
 // GET /scrabble/chart: shows the letter score chart
 // GET /scrabble/score: shows a form allowing a user to submit a word for scoring
