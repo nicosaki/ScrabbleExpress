@@ -9,7 +9,7 @@ router.get('/scrabble/chart', Controller.chart)
 
 router.get('/scrabble/score', Controller.score)
 
-router.post('/scrabble/score', Controller.score_word)
+router.post('/scrabble/score', Controller.scoreWord)
 
 router.get('/scrabble/score/:word', Controller.value)
 
