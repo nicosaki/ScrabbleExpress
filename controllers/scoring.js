@@ -1,3 +1,5 @@
+var Scrabble = require('../lib/scoring')
+var scrabble = new Scrabble()
 var ScoringController = {
 
   index: function (req, response, next) {
@@ -12,12 +14,16 @@ var ScoringController = {
     response.render('score', { title: 'Score My Word' })
   },
 
-  score_word: function (req, response, next) { // POST
-    response.render('value', { title: 'Word Score' }) // render??
+  scoreWord: function (request, response, next) { // POST may be garbage
+    var word = request.body.word
+    var wordScore = scrabble.score(word)
+    response.render('value', { title: 'Value of Word', word: word, wordScore: wordScore}) // render??
   },
 
-  value: function (req, response, next) {
-    response.render('value', { title: 'Value of Word' })
+  value: function (request, response, next) {
+    var word = request.body.word
+    var wordScore = scrabble.score(word)
+    response.render('value', { title: 'Value of Word', word: word, wordScore: wordScore })
   }
 }
 
